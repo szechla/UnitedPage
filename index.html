@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="img/herb.png">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="custom.css">
+
+    <title>Man Utd Fan Page</title>
+</head>
+
+<body>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Player's gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#widgets">Widgets</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+            Manchester United
+          </span>
+        </div>
+    </nav>
+
+    <!-- Heading text -->
+    <div class="jumbotron text-center bg-danger text-light mb-0 mt-4">
+        <h1 class="display-4">Hello, world!</h1>
+        <img src="img/herb.png" alt="ManUtd" class="img-thumnbail col-md-1 mw-25 my-4">
+        <p class="lead">Welcome! This page have been made to practice front-end skills making page about the greatest footbal club - Manchester United.</p>
+        <hr class="my-4">
+        <p>To make this website I've used Boostrap, JavaScript, HTML5 and CSS3.</p>
+        <a class="btn btn-success btn-lg align-middle " href="#" role="button">Learn more</a>
+    </div>
+
+    <!-- Content -->
+    <!-- IMAGE GALLERY -->
+    <div id="gallery" class="bg-dark w-100 mb-5 text-muted text-center">
+        <h1>Team slideshow:</h1>
+        <div id="carouselExampleIndicators" class="carousel slide col-md-8 mh-25 m-auto bg-dark" data-ride="carousel">
+
+            <!-- 
+                ------------ INDICATORS - TURNED OFF -------------
+            -->
+            <!-- <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            </ol> -->
+            <div class="carousel-inner m-auto">
+                <div class="carousel-item active">
+                    <img src="img/ogs.jpg" class="d-inline-block slide-image" alt="...">
+                    <div class="d-inline-block text-center text-light">
+                        <h2 class="m-auto">Ole Gunnar Solskjear</h2>
+                    </div>
+                </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- WIDGETS -->
+    <div id="widgets" class="container text-center mb-5">
+        <div class="row">
+            <div class="col-sm">
+                <h2 class="dipslay-4">OLD TRAFFORD</h2>
+                <p>The Theatre of Dreams</p>
+                <img src="img/oldtrafford.jpg" alt="Old Trafford" class="img-thumbnail">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2375.302209650492!2d-2.293528784157149!3d53.46305888000367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1548501750976" frameborder="0" style="border:0" allowfullscreen class="googleMap"></iframe>
+            </div>
+            <div class="col-sm">
+                <h2 class="dipslay-4">WHAT'S GOING ON?</h2>
+                <a class="twitter-timeline" data-height="555" data-theme="light" href="https://twitter.com/ManUtd?ref_src=twsrc%5Etfw">Tweets by ManUtd</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div class="col-sm">
+                <h2 class="dipslay-4">STH ABOUT CLIMAT</h2>
+                <p>Current weather in Manchester:</p>
+                <a class="weatherwidget-io" href="https://forecast7.com/en/53d48n2d24/manchester/" data-label_1="MANCHESTER" data-label_2="WEATHER" data-theme="original">MANCHESTER WEATHER</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <!-- Custom Javascript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
