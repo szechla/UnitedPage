@@ -1,17 +1,51 @@
+/* HEADER BACKGROUND */
+
+.bg-united {
+    background: linear-gradient(0.25turn, #dc3546b6, #dc3545, #dc3545b6), url("img/header2.jpg") left no-repeat, url("img/header1.jpg") right no-repeat
+}
+
+
+/* NEWS CARDS */
+
+.hover-opacity {
+    opacity: 0.6;
+}
+
+.hover-opacity:hover {
+    opacity: 1;
+}
+
+
+/* IMAGE SLIDE  */
+
 .slide-image {
     height: 400px;
     max-width: 80%
-}
-
-.googleMap {
-    height: 300px;
-    width: 100%
 }
 
 .img-thumnbail {
     width: 200px;
     max-width: 50%!important;
 }
+
+
+/* WIDGETS */
+
+.googleMap {
+    height: 300px;
+    width: 100%
+}
+
+.fixed-bg-team {
+    width: 100%;
+    background: linear-gradient(#6c757db6, #6c757db6), url("img/team.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    height: fit-content
+}
+
+
+/* MEDIA-QUERIES */
 
 @media only screen and (min-width: 768px) {
     height: 200px;

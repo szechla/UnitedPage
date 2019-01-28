@@ -6,15 +6,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="img/herb.png">
-
+    <title>Man Utd Fan Page</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
     <!-- My CSS -->
     <link rel="stylesheet" href="custom.css">
-
-    <title>Man Utd Fan Page</title>
 </head>
 
 <body>
@@ -42,20 +39,33 @@
     </nav>
 
     <!-- Heading text -->
-    <div class="jumbotron text-center bg-danger text-light mb-0 mt-4">
+    <div class="jumbotron text-center bg-danger text-light mb-0 mt-4 bg-united">
         <h1 class="display-4">Hello, world!</h1>
         <img src="img/herb.png" alt="ManUtd" class="img-thumnbail col-md-1 mw-25 my-4">
-        <p class="lead">Welcome! This page have been made to practice front-end skills making page about the greatest footbal club - Manchester United.</p>
+        <p class="lead">Welcome! This page have been made to practice front-end skills making page about the greatest football club - Manchester United.</p>
         <hr class="my-4">
         <p>To make this website I've used Boostrap, JavaScript, HTML5 and CSS3.</p>
         <a class="btn btn-success btn-lg align-middle " href="#" role="button">Learn more</a>
     </div>
-
     <!-- Content -->
+    <!-- POSTS made with Vue.js -->
+    <div id="blog" class="fixed-bg-team my-0">
+        <h2 class="text-center display-4 text-white bg-dark px-5">LATEST NEWS:</h2>
+        <div class="card-deck m-4">
+            <div class="card hover-opacity" v-for="item in news">
+                <img v-bind:src="item.img" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"> {{ item.title }}</h5>
+                    <p class="card-text">{{ item.shortInfo }}</p>
+                    <p class="card-text"><small class="text-muted"> {{ item.postTime }} </small></p>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- IMAGE GALLERY -->
-    <div id="gallery" class="bg-dark w-100 mb-5 text-muted text-center">
-        <h1>Team slideshow:</h1>
-        <div id="carouselExampleIndicators" class="carousel slide col-md-8 mh-25 m-auto bg-dark" data-ride="carousel">
+    <div id="gallery" class="w-100 mb-0 text-muted text-center bg-dark">
+        <h2 class="text-center display-4 text-danger bg-dark px-5">TEAM SLIDESHOW:</h2>
+        <div id="carouselExampleIndicators" class="carousel slide col-md-8 mh-25 m-auto" data-ride="carousel">
 
             <!-- 
                 ------------ INDICATORS - TURNED OFF -------------
@@ -83,22 +93,26 @@
         </div>
     </div>
 
+
+
+
     <!-- WIDGETS -->
+    <h2 class="text-center display-4 text-dark bg-danger px-5">WIDGETS:</h2>
     <div id="widgets" class="container text-center mb-5">
         <div class="row">
             <div class="col-sm">
-                <h2 class="dipslay-4">OLD TRAFFORD</h2>
+                <h3>OLD TRAFFORD</h3>
                 <p>The Theatre of Dreams</p>
                 <img src="img/oldtrafford.jpg" alt="Old Trafford" class="img-thumbnail">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2375.302209650492!2d-2.293528784157149!3d53.46305888000367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1548501750976" frameborder="0" style="border:0" allowfullscreen class="googleMap"></iframe>
             </div>
             <div class="col-sm">
-                <h2 class="dipslay-4">WHAT'S GOING ON?</h2>
+                <h3>WHAT'S GOING ON?</h3>
                 <a class="twitter-timeline" data-height="555" data-theme="light" href="https://twitter.com/ManUtd?ref_src=twsrc%5Etfw">Tweets by ManUtd</a>
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
             <div class="col-sm">
-                <h2 class="dipslay-4">STH ABOUT CLIMAT</h2>
+                <h3>STH ABOUT CLIMAT</h3>
                 <p>Current weather in Manchester:</p>
                 <a class="weatherwidget-io" href="https://forecast7.com/en/53d48n2d24/manchester/" data-label_1="MANCHESTER" data-label_2="WEATHER" data-theme="original">MANCHESTER WEATHER</a>
             </div>
@@ -110,9 +124,12 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!-- VUE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <!-- Custom Javascript -->
     <script src="script.js"></script>
+    <script src="blog.js"></script>
 </body>
 
 </html>
