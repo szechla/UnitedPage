@@ -16,39 +16,42 @@
 
 <body>
     <!-- NavBar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top py-1">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link anchor" href="#home">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#gallery">Player's gallery</a>
+                    <a class="nav-link anchor" href="#news">News</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#widgets">Widgets</a>
+                    <a class="nav-link anchor" href="#gallery">Player's gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link anchor" href="#widgets">Widgets</a>
                 </li>
             </ul>
             <span class="navbar-text">
-            Manchester United
+                <a class="btn btn-success btn-sm align-middle py-0" href="#" role="button">Login</a>
           </span>
         </div>
     </nav>
 
     <!-- Heading text -->
-    <div class="jumbotron text-center bg-danger text-light mb-0 mt-4 bg-united">
+    <div class="jumbotron text-center bg-danger text-light mb-0 mt-4 bg-united" id="home">
         <h1 class="display-4">Hello, world!</h1>
         <img src="img/herb.png" alt="ManUtd" class="img-thumnbail col-md-1 mw-25 my-4">
         <p class="lead">Welcome! This page have been made to practice front-end skills making page about the greatest football club - Manchester United.</p>
         <hr class="my-4">
         <p>To make this website I've used Boostrap, JavaScript, HTML5 and CSS3.</p>
-        <a class="btn btn-success btn-lg align-middle " href="#" role="button">Learn more</a>
     </div>
     <!-- Content -->
     <!-- POSTS made with Vue.js -->
+    <div id="news" class="navBarTarget"></div>
     <div id="blog" class="fixed-bg-team my-0">
         <h2 class="text-center display-4 text-white bg-dark px-5">LATEST NEWS:</h2>
         <div class="card-deck m-4">
@@ -63,7 +66,9 @@
         </div>
     </div>
     <!-- IMAGE GALLERY -->
-    <div id="gallery" class="w-100 mb-0 text-muted text-center bg-dark">
+
+    <div id="gallery" class="navBarTarget"></div>
+    <div id="slider" class="w-100 mb-0 text-muted text-center bg-dark">
         <h2 class="text-center display-4 text-danger bg-dark px-5">TEAM SLIDESHOW:</h2>
         <div id="carouselExampleIndicators" class="carousel slide col-md-8 mh-25 m-auto" data-ride="carousel">
 
@@ -93,12 +98,12 @@
         </div>
     </div>
 
-
-
-
     <!-- WIDGETS -->
-    <h2 class="text-center display-4 text-dark bg-danger px-5">WIDGETS:</h2>
-    <div id="widgets" class="container text-center mb-5">
+    <div id="widgets" class="navBarTarget"></div>
+    <div id="widgets-header">
+        <h2 class="text-center display-4 text-dark bg-danger px-5">WIDGETS:</h2>
+    </div>
+    <div class="container text-center mb-5">
         <div class="row">
             <div class="col-sm">
                 <h3>OLD TRAFFORD</h3>

@@ -68,6 +68,42 @@ const players = [{
 const html_beg = `<div class="carousel-item"><img src="`;
 const html_mid = `" class="d-inline-block slide-image" alt="..."><div class="d-inline-block text-center text-light"><h2 class="m-auto">`;
 const html_end = `</h2></div></div>`;
+const navbarTargets = $(".navBarTarget");
+
+//Fixing navigation
+function setPosition(e) {
+    //Get the height of navbar
+    let navbarHeight = $("nav").outerHeight();
+    // //Get the position of real target element
+    let tempPosition = $("#blog").position().top;
+    //Set the position of anchor target
+    $("#news").css("top", tempPosition - navbarHeight)
+    console.log(tempPosition - navbarHeight)
+
+    let tempPosition2 = $("#slider").position().top;
+    $("#gallery").css("top", tempPosition2 - navbarHeight + 231.56)
+    console.log(tempPosition2 - navbarHeight)
+    let tempPosition3 = $("#widgets-header").offset().top;
+    $("#widgets").css("top", tempPosition3 - navbarHeight + 231.56)
+    console.log(tempPosition3 - navbarHeight)
+}
+
+setPosition();
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth',
+            block: "start"
+        });
+
+    });
+});
+
+//Image slider
 
 function makecarosuel() {
     for (i = 1; i < players.length; i++) {
