@@ -1,9 +1,13 @@
        /* --NAVBAR TARGETS-- */
        
-       .navBarTarget {
+       .navbarTarget {
            position: absolute;
        }
        /* HEADER BACKGROUND */
+       
+       #header {
+           margin-top: initial;
+       }
        
        .bg-united {
            background: linear-gradient(0.25turn, #dc3546b6, #dc3545, #dc3545b6), url("img/header2.jpg") left no-repeat, url("img/header1.jpg") right no-repeat
@@ -16,6 +20,19 @@
        
        .hover-opacity:hover {
            opacity: 1;
+       }
+       /* NEWS PAGE */
+       
+       .news-page {
+           background: linear-gradient(#242627e1, #242627, #242627e1), url("img/bg-newspage.jpg") no-repeat;
+           background-size: cover;
+           position: fixed;
+           padding: 3% 15%;
+           display: none;
+       }
+       
+       .news-page-img {
+           max-width: 33%;
        }
        /* IMAGE SLIDE  */
        

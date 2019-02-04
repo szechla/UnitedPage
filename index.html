@@ -40,88 +40,95 @@
           </span>
         </div>
     </nav>
-
-    <!-- Heading text -->
-    <div class="jumbotron text-center bg-danger text-light mb-0 mt-4 bg-united" id="home">
-        <h1 class="display-4">Hello, world!</h1>
-        <img src="img/herb.png" alt="ManUtd" class="img-thumnbail col-md-1 mw-25 my-4">
-        <p class="lead">Welcome! This page have been made to practice front-end skills making page about the greatest football club - Manchester United.</p>
-        <hr class="my-4">
-        <p>To make this website I've used Boostrap, JavaScript, HTML5 and CSS3.</p>
-    </div>
-    <!-- Content -->
-    <!-- POSTS made with Vue.js -->
-    <div id="news" class="navBarTarget"></div>
-    <div id="blog" class="fixed-bg-team my-0">
-        <h2 class="text-center display-4 text-white bg-dark px-5">LATEST NEWS:</h2>
-        <div class="card-deck m-4">
-            <div class="card hover-opacity" v-for="item in news">
-                <img v-bind:src="item.img" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"> {{ item.title }}</h5>
-                    <p class="card-text">{{ item.shortInfo }}</p>
-                    <p class="card-text"><small class="text-muted"> {{ item.postTime }} </small></p>
-                </div>
-            </div>
+    <div id="main-content">
+        <!-- Heading text -->
+        <div id="header" class="jumbotron text-center bg-danger text-light mb-0 0 bg-united">
+            <h1 class="display-4">Hello, world!</h1>
+            <img src="img/herb.png" alt="ManUtd" class="img-thumnbail col-md-1 mw-25 my-4">
+            <p class="lead">Welcome! <br> This page have been made to practice front-end skills and it is about the greatest football club in the world - Manchester United.</p>
+            <hr class="my-4">
+            <p>To make this website I've used Boostrap, JavaScript (JQuery, Vue.js), HTML5 and CSS3.</p>
         </div>
-    </div>
-    <!-- IMAGE GALLERY -->
-
-    <div id="gallery" class="navBarTarget"></div>
-    <div id="slider" class="w-100 mb-0 text-muted text-center bg-dark">
-        <h2 class="text-center display-4 text-danger bg-dark px-5">TEAM SLIDESHOW:</h2>
-        <div id="carouselExampleIndicators" class="carousel slide col-md-8 mh-25 m-auto" data-ride="carousel">
-
-            <!-- 
-                ------------ INDICATORS - TURNED OFF -------------
-            -->
-            <!-- <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            </ol> -->
-            <div class="carousel-inner m-auto">
-                <div class="carousel-item active">
-                    <img src="img/ogs.jpg" class="d-inline-block slide-image" alt="...">
-                    <div class="d-inline-block text-center text-light">
-                        <h2 class="m-auto">Ole Gunnar Solskjear</h2>
+        <!-- Content -->
+        <!-- POSTS made with Vue.js -->
+        <div id="blog" class="fixed-bg-team my-0">
+            <div class="news-page vh-100 fixed-top text-light text-center">
+                <button type="button" class="btn btn-danger float-right p-3" v-on:click="closeNewsPage">X</button>
+                <h1 class="title display-3 m-3"></h1>
+                <h3 class="shortInfo m-3"></h3>
+                <p class="text text-left m-5"></p>
+            </div>
+            <h2 class="text-center display-4 text-white bg-dark px-5">LATEST NEWS:</h2>
+            <div class="card-deck m-4">
+                <div class="card hover-opacity" v-for="(item, index) in news" v-on:click="makeNewsPage" v-bind:id="index">
+                    <img v-bind:src="item.img" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ item.title }}</h5>
+                        <p class="card-text">{{ item.shortInfo }}</p>
+                        <p class="card-text"><small class="text-muted"> {{ item.postTime }} </small></p>
                     </div>
                 </div>
-
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- WIDGETS -->
-    <div id="widgets" class="navBarTarget"></div>
-    <div id="widgets-header">
-        <h2 class="text-center display-4 text-dark bg-danger px-5">WIDGETS:</h2>
-    </div>
-    <div class="container text-center mb-5">
-        <div class="row">
-            <div class="col-sm">
-                <h3>OLD TRAFFORD</h3>
-                <p>The Theatre of Dreams</p>
-                <img src="img/oldtrafford.jpg" alt="Old Trafford" class="img-thumbnail">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2375.302209650492!2d-2.293528784157149!3d53.46305888000367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1548501750976" frameborder="0" style="border:0" allowfullscreen class="googleMap"></iframe>
-            </div>
-            <div class="col-sm">
-                <h3>WHAT'S GOING ON?</h3>
-                <a class="twitter-timeline" data-height="555" data-theme="light" href="https://twitter.com/ManUtd?ref_src=twsrc%5Etfw">Tweets by ManUtd</a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
-            <div class="col-sm">
-                <h3>STH ABOUT CLIMAT</h3>
-                <p>Current weather in Manchester:</p>
-                <a class="weatherwidget-io" href="https://forecast7.com/en/53d48n2d24/manchester/" data-label_1="MANCHESTER" data-label_2="WEATHER" data-theme="original">MANCHESTER WEATHER</a>
             </div>
         </div>
+        <!-- IMAGE GALLERY -->
+        <div id="slider" class="w-100 mb-0 text-muted text-center bg-dark">
+            <h2 class="text-center display-4 text-danger bg-dark px-5">TEAM SLIDESHOW:</h2>
+            <div id="carouselExampleIndicators" class="carousel slide col-md-8 mh-25 m-auto" data-ride="carousel">
+
+                <!-- 
+                ------------ INDICATORS - TURNED OFF -------------
+            -->
+                <!-- <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            </ol> -->
+                <div class="carousel-inner m-auto">
+                    <div class="carousel-item active">
+                        <img src="img/ogs.jpg" class="d-inline-block slide-image" alt="...">
+                        <div class="d-inline-block text-center text-light">
+                            <h2 class="m-auto">Ole Gunnar Solskjear</h2>
+                        </div>
+                    </div>
+
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- WIDGETS -->
+        <div id="widgets-header">
+            <h2 class="text-center display-4 text-dark bg-danger px-5">WIDGETS:</h2>
+            <div class="container text-center mb-5">
+                <div class="row">
+                    <div class="col-sm">
+                        <h3>OLD TRAFFORD</h3>
+                        <p>The Theatre of Dreams</p>
+                        <img src="img/oldtrafford.jpg" alt="Old Trafford" class="img-thumbnail">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2375.302209650492!2d-2.293528784157149!3d53.46305888000367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1548501750976" frameborder="0" style="border:0" allowfullscreen class="googleMap"></iframe>
+                    </div>
+                    <div class="col-sm">
+                        <h3>WHAT'S GOING ON?</h3>
+                        <a class="twitter-timeline" data-height="555" data-theme="light" href="https://twitter.com/ManUtd?ref_src=twsrc%5Etfw">Tweets by ManUtd</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                    <div class="col-sm">
+                        <h3>STH ABOUT CLIMAT</h3>
+                        <p>Current weather in Manchester:</p>
+                        <a class="weatherwidget-io" href="https://forecast7.com/en/53d48n2d24/manchester/" data-label_1="MANCHESTER" data-label_2="WEATHER" data-theme="original">MANCHESTER WEATHER</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- NAVBAR TARGETS -->
+    <div id="navbarTargets">
+
     </div>
 
     <!-- Optional JavaScript -->
@@ -133,8 +140,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <!-- Custom Javascript -->
-    <script src="script.js"></script>
     <script src="blog.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

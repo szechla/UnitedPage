@@ -71,30 +71,38 @@ const html_end = `</h2></div></div>`;
 const navbarTargets = $(".navBarTarget");
 
 //Fixing navigation
-function setPosition(e) {
-    //Get the height of navbar
-    let navbarHeight = $("nav").outerHeight();
-    // //Get the position of real target element
-    let tempPosition = $("#blog").position().top;
-    //Set the position of anchor target
-    $("#news").css("top", tempPosition - navbarHeight)
-    console.log(tempPosition - navbarHeight)
 
-    let tempPosition2 = $("#slider").position().top;
-    $("#gallery").css("top", tempPosition2 - navbarHeight + 231.56)
-    console.log(tempPosition2 - navbarHeight)
-    let tempPosition3 = $("#widgets-header").offset().top;
-    $("#widgets").css("top", tempPosition3 - navbarHeight + 231.56)
-    console.log(tempPosition3 - navbarHeight)
+const targets = ["home", "news", "gallery", "widgets"]
+const mainElements = $("#main-content").children();
+
+function checkTargetsPosition() {
+    for (i = 0; i < targets.length; i++) {
+        let navbarHeight = $("nav").outerHeight();
+        $("#header").css("margin-top", navbarHeight)
+            //Make navbar targets - virtual divs
+        $("#navbarTargets").append(`<div id="${targets[i]}" class="navbarTarget"></div>`)
+            //Set targets positions
+        let tempTarget = $(".navbarTarget")[i]
+        let tempPrevElement = $("#main-content").children()[i - 1];
+        if (i === 0) {
+            $(tempTarget).css("top", 0)
+        } else {
+            //Find height and position of previous element
+            let prevTargetHeight = $(tempPrevElement).outerHeight();
+            let prevTargetPosition = parseFloat($(tempTarget).prev().css("top"));
+            //Setting new position
+            $(tempTarget).css("top", prevTargetHeight + prevTargetPosition)
+        }
+    }
 }
-
-setPosition();
+checkTargetsPosition()
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
+        checkTargetsPosition();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth',
             block: "start"
