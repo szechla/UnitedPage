@@ -1,7 +1,24 @@
-       /* --NAVBAR TARGETS-- */
+       /* --NAVBAR -- */
        
        .navbarTarget {
            position: absolute;
+       }
+       
+       .loginBtn {
+           position: fixed;
+           right: 5%;
+           top: 0;
+       }
+       
+       .welcomeSpan {
+           right: 5%;
+           top: 0;
+           display: inline-block;
+           margin-right: 3px;
+       }
+       
+       #logoutBtn {
+           display: none;
        }
        /* HEADER BACKGROUND */
        

@@ -1,3 +1,13 @@
+//Declaring variables 
+const users = [{
+        name: "Kamil",
+        password: "admin"
+    },
+    {
+        name: "User",
+        password: "user"
+    }
+]
 const players = [{
         name: "Ole Gunnar Solskjear",
         image: "img/ogs.jpg"
@@ -64,18 +74,60 @@ const players = [{
         image: "img/lukaku.png"
     }
 ]
-
 const html_beg = `<div class="carousel-item"><img src="`;
 const html_mid = `" class="d-inline-block slide-image" alt="..."><div class="d-inline-block text-center text-light"><h2 class="m-auto">`;
 const html_end = `</h2></div></div>`;
 const navbarTargets = $(".navBarTarget");
-
-//Fixing navigation
-
 const targets = ["home", "news", "gallery", "widgets"]
 const mainElements = $("#main-content").children();
 
+//Login
+$("#logoutBtn").css("display", "initial");
+$("#logout").hide();
+$("#loginButton").on("click", login)
+$("#logoutBtn").on("click", logout)
+
+function logout() {
+    $("#loginUser").val("");
+    $("#loginPassword").val("");
+
+    $("#loginButtonSpan").show();
+    $("#logout").hide();
+}
+
+function login() {
+    for (i = 0; i < users.length; i += 1) {
+        let username = users[i].name;
+        let password = users[i].password;
+        let usernameInput = $("#loginUser").val()
+        let passwordInput = $("#loginPassword").val()
+            //Check login/password compatibility
+        if (usernameInput.toLowerCase() === username.toLowerCase() && passwordInput === password) {
+            console.log("BRAWO, " + username)
+            alert("You are logged in!");
+            $("#loginButtonSpan").hide();
+            $("#loginButtonSpan a").trigger("click");
+            $("#logout").show();
+            $("#welcomeUserSpan").html("<p class='d-inline mr-3 my-0'> Welcome, <strong>" + username + "</strong></p>");
+            break;
+            //Alert error at loop's end
+        } else if (i + 1 === users.length) {
+            if (usernameInput == "" || passwordInput == "") {
+                alert("You have to input login and password.");
+                break;
+            } else {
+                alert("Login or password are incorrect.");
+            }
+        }
+
+
+
+    }
+}
+
+//Fixing navigation
 function checkTargetsPosition() {
+    $("#navbarTargets").html("")
     for (i = 0; i < targets.length; i++) {
         let navbarHeight = $("nav").outerHeight();
         $("#header").css("margin-top", navbarHeight)
@@ -98,8 +150,6 @@ function checkTargetsPosition() {
 checkTargetsPosition()
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         checkTargetsPosition();
